@@ -1,0 +1,264 @@
+/* css for contact.html page*/
+html, body {
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #555;
+    background-color: white;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* HEADER STYLES */
+#big-wrapper-thing {
+    background-color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#gem-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #222;
+    padding-left: 50px;
+}
+
+.top-nav-holder {
+    padding-right: 50px;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-button-a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+/* red underline for contact us in nav bar */
+.nav-button-a:nth-child(3) {
+    border-bottom: 2px solid #a30000; 
+}
+
+.div_user_ico i {
+    font-size: 28px;
+    color: #333;
+}
+
+
+/* Main Content Wrap */
+.big_content_area {
+    flex-grow: 1 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.header_banner_1 {
+    width: 100%;
+    text-align: center;
+    padding: 80px 0 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Pattern */
+.bg_pattern_lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background: repeating-linear-gradient(45deg, #bbb, #bbb 1px, transparent 1px, transparent 10px);
+    z-index: -1;
+}
+
+.header_banner_1 h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.header_banner_1 p {
+    font-size: 14px;
+    color: #888;
+}
+
+/*  Contact Wrapper (Form and Details)  */
+.contact_wrapper_2 {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: -80px;
+    display: flex; 
+    justify-content: flex-start; 
+    padding: 0 15px;
+    margin-bottom: 50px;
+}
+
+/* Applying identical style to both main boxes */
+.box_left_form,
+.box_right_details {
+    width: 49%; 
+    padding: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
+    background-color: white;
+    border-radius: 15px; 
+}
+
+/*  Left Side (Form) */
+.box_left_form {
+    margin-right: 20px;
+}
+
+.title_sub_1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.description_text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* Input Styling */
+.my_big_form input[type="text"],
+.my_big_form input[type="email"],
+.my_big_form input[type="tel"],
+.my_big_form textarea {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.my_big_form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* two-input lines style */
+.line_two_inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line_two_inputs input {
+    width: 48%; 
+}
+
+/* Leave a message Button styling*/
+.red_submit_btn {
+    background-color: #d63031;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/*  Right Side (Details) */
+.title_sub_2 {
+    font-size: 18px;
+    font-weight: bold; 
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.box_right_details p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.section_call, .section_chat, .section_visit {
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+.section_call {
+    border-top: none;
+}
+
+.detail_item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.detail_item i {
+    font-size: 20px;
+    color: #d63031;
+    margin-right: 15px;
+    width: 25px; 
+    text-align: center;
+}
+
+/* Phone Number */
+.the_phone_num {
+    font-size: 18px;
+    font-weight: bold; 
+    color: #333;
+}
+
+.the_chat_txt, .the_address_txt {
+    font-size: 16px;
+    color: #333;
+}
+
+
+/*  Map Section  */
+.map_placeholder_3 {
+    width: 100%;
+    max-width: 1000px;
+    height: 350px;
+    background-image: url('map.png');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/*  FOOTER STYLING (Fixed for Dark Background)  */
+.bottom-footer-super-dark {
+    background-color: #222 !important; 
+    color: white !important;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.center-footer-text {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-title-left {
+    font-weight: bold;
+}

@@ -1,0 +1,92 @@
+body{
+margin: 0;
+font-family: Arial;
+background: #f5f5f5;
+}
+
+/* top bar */
+.topbar{
+background: white;
+padding: 15px 40px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid #ccc;
+}
+
+.logo{
+margin: 0;
+}
+
+.menu{
+list-style: none;
+display: flex;
+gap: 20px;
+}
+
+.menu li{
+cursor: pointer;
+}
+
+.usericon{
+font-size: 22px;
+}
+
+/* header box */
+.headbox{
+background: linear-gradient(120deg,#eee,#fff);
+height: 200px;
+text-align: center;
+padding-top: 60px;
+}
+
+.headbox h1{
+margin: 0;
+font-size: 40px;
+}
+
+/* login card */
+.login-card{
+width: 420px;
+background: white;
+margin: 70px auto;
+padding: 30px;
+border-radius: 8px;
+border: 1px solid #ccc;
+}
+
+.login-card label{
+display: block;
+margin-top: 15px;
+color: gray;
+}
+
+.login-card input{
+width: 95%;
+padding: 10px;
+margin-top: 6px;
+border: 1px solid #ccc;
+border-radius: 6px;
+}
+
+.remember{
+margin-top: 15px;
+color: gray;
+}
+
+.login-card button{
+margin-top: 20px;
+background: red;
+color: white;
+border: none;
+padding: 12px 30px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 6px;
+}
+
+.msg{
+color: red;
+font-size: 14px;
+margin-bottom: 10px;
+}
