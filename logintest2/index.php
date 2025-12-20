@@ -2,22 +2,21 @@
 <html>
 <head>
 <title>Login</title>
-<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="style/style.css?v=2">
 </head>
 
 <body>
 
 <!-- top navbar -->
-<div class="topbar">
-  <h2 class="logo">Gemorskos</h2>
-  <ul class="menu">
-    <li>Latest News</li>
-    <li>Politics</li>
-    <li>Contact Us</li>
-    <li>Business</li>
-  </ul>
-  <div class="usericon">👤</div>
-</div>
+<header>
+        <div class="navbar">
+            <h2>Gemorskos</h2>
+            <ul>
+                <li><a href="home.html" class="home">Home</a></li>
+                <li><a href="index.php" class="login">Login</a></li>
+            </ul>
+        </div>
+    </header>
 
 <!-- header section -->
 <div class="headbox">

@@ -11,6 +11,7 @@ body {
 header {
     height: 80px;
     background-color: #FFFFFF;
+    border-bottom: 1px solid #CCCC;
 }
 
 .navbar {
@@ -104,6 +105,7 @@ header {
 footer {
     height: 70px;
     background-color: #FFFFFF;
+    border-top: 1px solid #CCCC;
 }
 
 .copyright {
