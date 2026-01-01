@@ -8,11 +8,11 @@ body {
     font-family: 'Georgia', 'serif';
     background-color: #F6F6F6;
     height: 100%;
-    /* i added this - klaudia */
+    /* i added this in order to fix the footer layout - klaudia */
     display: flex;
-    /* i added this - klaudia */
+    /* i added this in order to fix the footer layout- klaudia */
     flex-direction: column;
-    /* i added this - klaudia */
+    /* i added this in order to fix the footer layout- klaudia */
 }
 
 main {
