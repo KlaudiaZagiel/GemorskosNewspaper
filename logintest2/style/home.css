@@ -6,6 +6,12 @@
 body {
     font-family: 'Georgia', 'serif';
     background-color: #F6F6F6;
+    height: 100%;
+    /* i added this - klaudia */
+    display: flex;
+    /* i added this - klaudia */
+    flex-direction: column;
+    /* i added this - klaudia */
 }
 
 header {
@@ -96,7 +102,7 @@ header {
 }
 
 .newscards a {
-    color:#741415;
+    color: #741415;
     text-decoration: none;
     border-bottom: 2px solid #741415;
     padding-bottom: 3px;
