@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+html,
 body {
     font-family: 'Georgia', 'serif';
     background-color: #F6F6F6;
@@ -12,6 +13,10 @@ body {
     /* i added this - klaudia */
     flex-direction: column;
     /* i added this - klaudia */
+}
+
+main {
+    flex: 1;
 }
 
 header {
