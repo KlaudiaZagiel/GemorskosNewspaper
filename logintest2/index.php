@@ -1,14 +1,15 @@
+<?php session_start();
+?>
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="style/style.css?v=2">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Gemorskos</title>
+  <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
-
-  <!-- top navbar -->
   <header>
     <div class="navbar">
       <h2>Gemorskos</h2>
@@ -20,34 +21,27 @@
   </header>
 
   <!-- header section -->
-  <div class="headbox">
+   <div class="headbox">
     <h1>Login</h1>
-    <p>Welcome at Gemorskos Newspaper</p>
+    <p>Welcome to Gemorskos Newspaper</p>
   </div>
 
   <!-- login card -->
   <div class="login-card">
 
-    <!-- message area -->
-    <p class="msg">
-      <?php
-      if (isset($_GET["msg"])) {
-        echo $_GET["msg"];
-      }
-      ?>
-    </p>
+    <?php if (isset($_SESSION["error"])) {
+    echo "<p style='color:red'>" . htmlspecialchars($_SESSION["error"]) . "</p>";
+    unset($_SESSION["error"]);
+}
+?>
 
-    <form action="login.php" method="post">
+  <form action="login.php" method="post">
 
-      <label>Username or Email</label>
-      <input type="text" name="eml">
+      <label>Username</label>
+      <input type="text" name="username" required><br>
 
       <label>Password</label>
-      <input type="password" name="pass1">
-
-      <!-- <div class="remember">
-        <input type="checkbox"> Remember Me
-      </div> -->
+      <input type="password" name="password" required>
 
       <button type="submit" name="btn1">Log in</button>
 
@@ -55,5 +49,4 @@
   </div>
 
 </body>
-
 </html>

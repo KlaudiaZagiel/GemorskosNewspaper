@@ -1,7 +1,7 @@
 <?php
 
 // this was created by Muhammad Umar; I'm keeping it here just incase
-// I created a database so I'm changing things a little!!
+// I created a database so I'm changing things a little
 
 if(isset($_POST["btn1"]))
 {

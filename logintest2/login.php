@@ -1,26 +1,37 @@
 <?php session_start();
 require "db.php";
 
-if($_SERVER ['REQUEST_METHOD'] === "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+if($_SERVER ['REQUEST_METHOD'] !== "POST") {
+    header("Location: index.php");
+    exit;
+}
 
-    $stmt = $pdo->prepare("SELECT * 
-    FROM users
+if(!isset($_POST["username"], $_POST["password"])) {
+    $_SESSION["error"] = "Please fill in all the fields!";
+    header("Location: index.php");
+    exit;
+}
+
+$username = trim($_POST["username"]);
+$password = trim($_POST["password"]);
+
+$stmt = $pdo->prepare(
+    "SELECT *
+    FROM users 
     WHERE username = ?");
-    
-    $stmt->execute([$username]);
-    $user = $stmt->fetch();
+$stmt->execute([$username]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if($user && password_verify($password, $user["password_hash"])) {
-        $_SESSION["user_id"] = $user["id"];
-        $_SESSION["role"] = $user["role"];
+if($user && password_verify($password, $user["password"])) {
+    $_SESSION["user_id"] = $user["id"];
+    $_SESSION["role"] = $user["role"];
 
-        header("Location: admin.php"); // yet to come ?? I have to recheck this please don't adjust things
-        exit;
-    }
-    else {
-        echo "Invalid username or password. Please try again.";
-    }
+    header("Location: admin.php");
+    exit;
+}
+else {
+    $_SESSION["error"] = "Invalid username or password. Please try again.";
+    header("Location: index.php");
+    exit;
 }
 ?>
