@@ -3,12 +3,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Gemorskos</title>
   <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
   <header>
     <div class="navbar">
@@ -21,7 +23,7 @@
   </header>
 
   <!-- header section -->
-   <div class="headbox">
+  <div class="headbox">
     <h1>Login</h1>
     <p>Welcome to Gemorskos Newspaper</p>
   </div>
@@ -30,12 +32,12 @@
   <div class="login-card">
 
     <?php if (isset($_SESSION["error"])) {
-    echo "<p style='color:red'>" . htmlspecialchars($_SESSION["error"]) . "</p>";
-    unset($_SESSION["error"]);
-}
-?>
+      echo "<p style='color:red'>" . htmlspecialchars($_SESSION["error"]) . "</p>";
+      unset($_SESSION["error"]);
+    }
+    ?>
 
-  <form action="login.php" method="post">
+    <form action="login.php" method="post">
 
       <label>Username</label>
       <input type="text" name="username" required><br>
@@ -44,9 +46,11 @@
       <input type="password" name="password" required>
 
       <button type="submit" name="btn1">Log in</button>
+      <a href="register.php" class="create-button">Create an account</a>
 
     </form>
   </div>
 
 </body>
+
 </html>
