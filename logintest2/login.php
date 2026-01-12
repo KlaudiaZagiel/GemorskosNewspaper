@@ -1,5 +1,6 @@
 <?php session_start();
 require "db.php";
+die("LOGIN.PHP ON VM REACHED");
 
 if($_SERVER ['REQUEST_METHOD'] !== "POST") {
     header("Location: index.php");
