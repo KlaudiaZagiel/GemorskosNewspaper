@@ -10,17 +10,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO users (username, full_name, email, password)
-    VALUES (:username, :password, :full_name, :email, :password");
+        $stmt = $pdo->prepare(
+            "INSERT INTO users (username, full_name, email, password)
+    VALUES (:username, :password, :full_name, :email)"
+        );
 
         $stmt->execute([
             ":username" => $username,
             ":full_name" => $fullname,
             ":email" => $email,
-            ":password" => $password
+            ":password" => $hashedpassword
         ]);
 
-        header("Location: index.php?registered=1");
+        header("Location: register_success.php");
         exit;
     } catch (PDOException $e) {
         echo "We couldn't create your account: " . $e->getMessage();
