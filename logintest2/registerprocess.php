@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $stmt = $pdo->prepare(
             "INSERT INTO users (username, full_name, email, password)
-    VALUES (:username, :password, :full_name, :email)"
+    VALUES (:username, :full_name, :email, :password)"
         );
 
         $stmt->execute([
