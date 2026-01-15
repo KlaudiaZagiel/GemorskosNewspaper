@@ -7,12 +7,7 @@ if(!isset($_SESSION["user_id"])) {
     exit;
 }
 
-// this file is excl. admins
-
-if($_SESSION["role"] === "admin") {
-    header("Location: admin.php");
-    exit;
-}
+$role =$_SESSION["role"];
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +21,16 @@ if($_SESSION["role"] === "admin") {
     <h1>Welcome, <?php echo htmlspecialchars($_SESSION["full_name"] ?? $_SESSION ["username"]) ?></h1>
     <p>Your role is <?php echo htmlspecialchars($_SESSION["role"]) ?></p>
 
-    <?php if($_SESSION["role"] === "editor"): ?>
+    <?php if($role === "admin"): ?>
+        <p>You have admin access. You can manage users and content.</p>
+
+    <?php elseif($role === "editor"): ?>
         <p>You have editor access. You can manage articles.</p>
 
-    <?php elseif($_SESSION["role"] === "journalist"): ?>
+    <?php elseif($role === "journalist"): ?>
             <p>You have journalist access. You can write and submit articles.</p>
 
-    <?php elseif($_SESSION["role"] === "webdesigner"): ?>
+    <?php elseif($role === "webdesigner"): ?>
             <p>You have webdesigner access. You can design webpages.</p>
 
     <?php else: ?>
