@@ -1,6 +1,6 @@
 <?php session_start();
 
-if(!isset($_SESSION["user_id"]) || $_SESSION["role"] != "admin") {
+if(!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "admin") {
     header("Location: index.php");
     exit;
 }
@@ -14,6 +14,8 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["role"] != "admin") {
     <title>Admin | Gemorskos</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Hello, Admin <?php echo htmlspecialchars($_SESSION["full_name"]); ?>!</h1>
+    <p>You have full administrative access.</p>
+    <a href="logout.php">Logout</a>
 </body>
 </html>
