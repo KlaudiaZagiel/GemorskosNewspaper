@@ -16,8 +16,8 @@ $username = trim($_POST["username"]);
 $password = trim($_POST["password"]);
 
 $stmt = $pdo->prepare(
-    "SELECT *
-    FROM users 
+    "SELECT id, username, full_name, password, role
+    FROM users
     WHERE username = ?");
 $stmt->execute([$username]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -28,8 +28,10 @@ if($user && password_verify($password, $user["password"])) {
     $_SESSION["role"] = $user["role"];
     $_SESSION["username"] = $user["username"];
     $_SESSION["full_name"] = $user["full_name"];
+    $_SESSION["role"] = strtolower(trim($user["role"]));
 
-    if ($user["role"] === "admin") {
+
+    if ($_SESSION["role"] === "admin") {
         header("Location: admin.php");
     } else {
         header("Location: dashboard.php");
