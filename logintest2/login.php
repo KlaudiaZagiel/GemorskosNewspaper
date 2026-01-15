@@ -22,7 +22,12 @@ $stmt = $pdo->prepare(
 $stmt->execute([$username]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// verify credentials
+// DEBUG CHECK
+if($user) {
+    var_dump(($user)["password"]);
+    exit;
+}
+
 if($user && password_verify($password, $user["password"])) {
 
     session_regenerate_id(true);
