@@ -1,8 +1,8 @@
 <?php
-$host = "mysql";
+$host = "localhost";
 $dbname = "gemorskos_newspaper";
 $user = "root";
-$pass = "qwerty";
+$pass = "R00t!!R00t!!12345";
 
 try {
     $pdo = new PDO(
